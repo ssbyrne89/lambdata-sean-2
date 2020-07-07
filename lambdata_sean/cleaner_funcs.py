@@ -1,21 +1,22 @@
 #cleaner functions
-
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
 
-
 def helper1(X):
-    """this will create new columns in the dataset
-    for each time metric i.e. year, month, week, etc..."""
-    
-    # Prevent SettingWithCopyWarning
+    """
+    this will create new columns in the dataset
+    for each time metric i.e. year, month, week, etc...
+    these functions have only been tested on one dataset
+    """
+
+# Prevent SettingWithCopyWarning
     X = X.copy()
-    
-    # Convert date_recorded to datetime
+
+# Convert date_recorded to datetime
     X['Date'] = pd.to_datetime(X['Date '], infer_datetime_format=True)
-    
-    # Extract components from date_recorded, then drop the original column
+
+# Extract components from date_recorded, then drop the original column
     X['year'] = X['Date'].dt.year
     X['month'] = X['Date'].dt.month
     X['week'] = X['Date'].dt.week
@@ -27,15 +28,16 @@ def helper1(X):
 
     # return the dataframe
     return X
+# consider adding some lines to remove trailing spaces
 
 
 def helper2(X):
 
     # Split train into train & val
     train_one, test = train_test_split(X, train_size=0.80, test_size=0.20,
-                                   random_state=42)
+                                       random_state=42)
 
-    train, val = train_test_split(train_one, train_size=0.80, test_size=0.20, 
-                          random_state=42)
+    train, val = train_test_split(train_one, train_size=0.80, test_size=0.20,
+                                  random_state=42)
 
     return train, val, test

@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
 setup(
     name="lambdata-sean-2",
-    version="0.1.4",
+    version="0.1.5",
     author="Sean",
     description="A collection of Data Science helper functions",
     long_description=LONG_DESCRIPTION,
