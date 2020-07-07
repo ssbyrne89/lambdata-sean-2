@@ -8,7 +8,7 @@ REQUIRED = [
 ]
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
-setuptools.setup(
+setup(
     name="lambdata-sean-2",
     version="0.0.3",
     author="Sean",
