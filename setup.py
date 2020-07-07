@@ -17,7 +17,6 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/ssbyrne89/lambdata-sean-2",
     packages=["lambdata_sean"]
-    python_requires=">=3.7",
     install_requires=REQUIRED,
     classifiers=[
         "Programming Language :: Python :: 3",
