@@ -10,13 +10,13 @@ with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
 setup(
     name="lambdata-sean-2",
-    version="0.0.3",
+    version="0.0.4",
     author="Sean",
     description="A collection of Data Science helper functions",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     url="https://github.com/ssbyrne89/lambdata-sean-2",
-    packages=find_packages(),
+    packages=["lambdata_sean"]
     python_requires=">=3.7",
     install_requires=REQUIRED,
     classifiers=[
