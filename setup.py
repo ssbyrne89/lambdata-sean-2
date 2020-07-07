@@ -16,7 +16,7 @@ setup(
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
     url="https://github.com/ssbyrne89/lambdata-sean-2",
-    packages=setuptools.find_packages(),
+    packages=find_packages(),
     python_requires=">=3.7",
     install_requires=REQUIRED,
     classifiers=[
