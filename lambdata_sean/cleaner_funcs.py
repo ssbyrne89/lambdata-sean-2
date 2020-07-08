@@ -17,7 +17,7 @@ def helper1(X):
 # Convert date_recorded to datetime
     X['Date'] = pd.to_datetime(X['Date '], infer_datetime_format=True)
 
-# Extract components from date_recorded, then drop the original column
+# Extract components from date_recorded
     X['year'] = X['Date'].dt.year
     X['month'] = X['Date'].dt.month
     X['week'] = X['Date'].dt.week
@@ -25,13 +25,13 @@ def helper1(X):
     X['hour'] = X['Date'].dt.hour
     X['minute'] = X['Date'].dt.minute
     X['second'] = X['Date'].dt.second
+# drops the original Date column
     X = X.drop(columns='Date')
-
-    # return the dataframe
+# removes any trailing spaces the column names had previously
+    X.column = X.column.str.replace(',','')
+# return the dataframe
     return X
-# consider adding some lines to remove trailing spaces
-
-
+    
 def helper2(X):
 
     # Split train into train & val
