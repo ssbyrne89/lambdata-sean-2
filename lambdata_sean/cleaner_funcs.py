@@ -28,7 +28,7 @@ def helper1(X):
 # drops the original Date column
     X = X.drop(columns='Date')
 # removes any trailing spaces the column names had previously
-    X.column = X.column.str.replace(',','')
+    X.columns = X.columns.str.replace(' ','')
 # return the dataframe
     return X
     
